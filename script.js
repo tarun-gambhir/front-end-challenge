@@ -22,13 +22,14 @@ function domobj(){
 		getPdts.resolve();	//getProducts is complete, now we can update DOM.
 	});
   }
-    
+  //Included in the getJSON call above
+/*	  
   self.updateproducthtml = function(){
     for( i=0; i< self.products.length ; i++){
       self.products[i].updatehtml();
     }
   }
-  
+*/
   self.updatedom = function(){
     var i=0
     thishtml='';
@@ -59,7 +60,7 @@ function productobj(product, i){
     $.get('product-template.html', function(template){
       self.htmlview = template
 	  .replace('{image}', self.photo)
-	  .replace(/{title}/g, self.title)
+	  .replace(/{title}/g, self.title)		//replace title globally
 	  .replace('{tagline}', self.tagline)
 	  .replace('{url}', self.url);
     });
@@ -77,6 +78,7 @@ $.when(getPdts).then(function(){
 domUpdated.done(function(resp){
     $(".product-container").hover(function(){
 			for(var i=0; i<resp[0].length; i++){
+				//Match the title data in input to the title in the product, if matched -> show the repective description
 				if($(this).data('title') == resp[0][i].title){
 					$(this).find(".product-box-overlay").html(resp[0][i].description);
 					$(this).find(".product-box-overlay").show();

@@ -1,0 +1,7 @@
+1. For loading the products, I made sure that updateDom() gets called only after the request to get all the products is complete by using a Deferred object.
+
+2. Added another Deferred object that ensures the hovering effect happens after the DOM is ready.
+
+3. Removed the custom_class variable, added Bootstrap classes directly in the template since they're gonna be same for all.
+
+4. For the templating solution, instead of doing a string replacement, I'd used jQueryUI custom widget builder for the same purpose (build the elements inside it). It'd be a little more work, but in my opinion a cleaner solution. Or use Mustache for templates. Using the custom widget, it won't be another ajax call and we won't have to worry about one of them finishing before the other (if async) or things being slow, if async=false.
