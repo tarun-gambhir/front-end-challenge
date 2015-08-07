@@ -1,13 +1,106 @@
-body{font-family: "Arial"}
-a{text-decoration: none;}
-
-.product-container{width:300px; border:1px solid #aaa; margin:10px; display:inline-block;}
-.product-container img{width:100%; height:auto;}
-.row{width:946px;}
-
-.col1{float:left;}
-.col2{margin:10px auto;}
-.col3{float:right;}
-
-.title{font-size:20px;}
-.description{padding:10px;}
+	body{
+		font-family: "Arial";
+	}
+	a{
+		color:#0096ff;
+	}
+	#inProgress {
+	  position: fixed;
+	  width: 100%;
+	  height: 100%;
+	  font-size: 150px;
+	  text-align: center;
+	  vertical-align: middle;
+	  color: #000000;
+	  z-index: 9999;
+	  background-color: #FFFFFF;
+	}
+	.spinning {
+	  background-color: rgba(192,192,192,0.3);
+	  border: 9px solid rgba(0, 150, 255,0.3);
+	  border-left: 5px solid rgba(0,0,0,0);
+	  border-radius: 120px;
+	  -webkit-box-shadow: 0 0 35px #0087E6;
+	  box-shadow: 0 0 35px #0087E6;
+	  width: 100px;
+	  height: 100px;
+	  margin: 0 auto;
+	  -moz-animation: spin .5s infinite linear;
+	  -webkit-animation: spin .5s infinite linear;
+	  -o-animation: spin .5s infinite linear;
+	  animation: spin .5s infinite linear;
+	}
+	.product-container{
+		width:300px; 
+		border:1px solid #aaa; 
+		margin:10px; 
+		display:inline-block;
+		padding:0;
+		background-color: rgba(34,34,34,1);
+	}
+	.product-container img{
+		width:100%;
+		height:auto;
+	}
+	
+	.description > div{
+		font-size:16px;
+		text-align:center;
+	}
+	.description{
+		padding:10px;
+	}
+	
+	h1.title{
+		font-size:36px;
+		text-align:center;
+	}
+	.tagline{
+		font-size:18px;
+		text-align:center;
+	}
+	.product-box-overlay {
+		display:none;
+	}
+	a:hover .product-box-overlay {
+		font-size:13px;
+		display:inline;
+		text-align:center;
+		position: absolute;
+		transition: background 0.2s ease, padding 0.8s linear;
+		background-color: rgba(0,0,0,0.75);
+		color: #fff;
+		width:auto;
+		height:100%;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+	}
+	.product-box-overlay span {
+		position: relative;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	#close {
+		margin-left: -10px;
+		float:left;	
+	}
+	@-ms-keyframes spin {
+    	from { -ms-transform: rotate(0deg); }
+   		to { -ms-transform: rotate(360deg); }
+	}
+	@-moz-keyframes spin {
+		from { -moz-transform: rotate(0deg); }
+		to { -moz-transform: rotate(360deg); }
+	}
+	@-webkit-keyframes spin {
+		from { -webkit-transform: rotate(0deg); }
+		to { -webkit-transform: rotate(360deg); }
+	}
+	@keyframes spin {
+		from {
+			transform:rotate(0deg);
+		}
+		to {
+			transform:rotate(360deg);
+		}
+	}

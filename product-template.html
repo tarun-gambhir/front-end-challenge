@@ -1,9 +1,16 @@
-<div class="product-container {custom_class}">
-  <a href="{url}">
-    <img src="{image}">
-    <div class="description">
-      <div class="title">{title}</div>
-      <div class="tagline">{tagline}</div>
-    </div>
-  </a>
+<div class="product-container col-xs-6 col-sm-4" data-title="{title}">
+      <a href="{url}" target="_blank">
+        <div class="product-box-overlay"></div>
+        <img src="{image}">
+        <div class="description">
+          <div class="title">{title}</div>
+          <div class="tagline">{tagline}</div>
+        </div>
+      </a>
 </div>
+<div id="close">
+	<input type="image" src="Close.png" class="closeBtn" />
+</div>
+
+
+
